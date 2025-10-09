@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SWARLY - Offline Pitch Practice</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <h1>SWARLY</h1>
+      <div class="subtitle">Offline Singing Practice with Real‑Time Pitch</div>
+    </header>
+
+    <section class="controls">
+      <div class="controls__row">
+        <label class="btn">
+          <input id="fileInput" type="file" accept="audio/*,video/*" hidden />
+          <span>Load Audio/Video</span>
+        </label>
+        <button id="micBtn" class="btn">Use Microphone</button>
+        <button id="playBtn" class="btn" disabled>Play/Pause</button>
+        <button id="stopBtn" class="btn" disabled>Stop</button>
+      </div>
+
+      <div class="controls__row">
+        <div class="field">
+          <label for="notationSelect">Notation</label>
+          <select id="notationSelect">
+            <option value="western">Western (Do Re Mi)</option>
+            <option value="indian">Indian (Sa Re Ga)</option>
+          </select>
+        </div>
+        <div class="field" id="a4Field">
+          <label for="a4Input">A4 (Hz)</label>
+          <input id="a4Input" type="number" value="440" min="400" max="460" step="1" />
+        </div>
+        <div class="field" id="tonicField" style="display:none">
+          <label for="tonicHzInput">Sa (Hz)</label>
+          <input id="tonicHzInput" type="number" value="261.63" min="100" max="500" step="0.1" />
+        </div>
+      </div>
+
+      <div class="controls__row">
+        <div class="field">
+          <label for="loopStart">Loop Start (s)</label>
+          <input id="loopStart" type="number" value="0" min="0" step="0.1" />
+        </div>
+        <div class="field">
+          <label for="loopEnd">Loop End (s)</label>
+          <input id="loopEnd" type="number" value="0" min="0" step="0.1" />
+        </div>
+        <div class="field">
+          <label for="enableLoop">Loop</label>
+          <input id="enableLoop" type="checkbox" />
+        </div>
+        <div class="field">
+          <label for="trimStart">Trim Start (s)</label>
+          <input id="trimStart" type="number" value="0" min="0" step="0.1" />
+        </div>
+        <div class="field">
+          <label for="trimEnd">Trim End (s)</label>
+          <input id="trimEnd" type="number" value="0" min="0" step="0.1" />
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="workspace__left">
+        <div class="media">
+          <audio id="audioEl" controls style="display:none"></audio>
+          <video id="videoEl" controls style="display:none"></video>
+        </div>
+
+        <canvas id="waveCanvas" width="900" height="220"></canvas>
+        <div class="pitchReadout">
+          <div>Detected: <span id="detectedHz">—</span> Hz (<span id="detectedNote">—</span>)</div>
+          <div>Expected: <span id="expectedHz">—</span> Hz (<span id="expectedNote">—</span>)</div>
+          <div>Cents Δ: <span id="centsDelta">—</span></div>
+          <div>Status: <span id="pitchStatus">—</span></div>
+        </div>
+
+        <div class="align">
+          <div class="align__controls">
+            <button id="startAlignBtn" class="btn">Start Align</button>
+            <button id="nextWordBtn" class="btn" disabled>Next Word</button>
+            <button id="finishAlignBtn" class="btn" disabled>Finish Align</button>
+            <button id="exportMapBtn" class="btn" disabled>Export Mapping</button>
+            <label class="btn">
+              <input id="importMapInput" type="file" accept="application/json" hidden />
+              <span>Import Mapping</span>
+            </label>
+          </div>
+          <textarea id="lyricsInput" rows="6" placeholder="Paste full lyrics here…"></textarea>
+          <div id="wordContainer" class="words"></div>
+        </div>
+      </div>
+
+      <div class="workspace__right">
+        <div class="practice">
+          <div class="practice__controls">
+            <button id="startPracticeBtn" class="btn" disabled>Start Practice</button>
+            <button id="pausePracticeBtn" class="btn" disabled>Pause</button>
+            <button id="resetPracticeBtn" class="btn" disabled>Reset</button>
+          </div>
+          <div class="legend">
+            <span class="dot dot--ok"></span> On pitch
+            <span class="dot dot--bad"></span> Off pitch
+          </div>
+          <div id="stats" class="stats"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="notes.js"></script>
+  <script src="pitch.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
