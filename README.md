@@ -19,6 +19,6 @@
 CSE graduate (AI & ML) building independent projects to learn by doing.
 
 - 🔭 Recent work: an audio ML pipeline for a Carnatic music-learning app, an offline finance tracker for a field agent, and a travel-decision prototype with AI photo verification
-- 🌱 Comfortable with Python, SQL, REST APIs, and picking up new tools as projects need them
+- 🌱 Comfortable with Python, My SQL, REST APIs, and picking up new tools as projects need them
 - 💬 Looking for entry-level roles in software development, AI/ML, or product/business analysis
 - 📫 Reach me at sravanikarthikeyar@gmail.com
