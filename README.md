@@ -6,8 +6,6 @@
 ![](https://nirzak-streak-stats.vercel.app/?user=RSVKJyothi&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=RSVKJyothi&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-### Hi, I'm Jyothi 👋
-
 # Hi, I'm R.S.V.K. Jyothi 👋
 
 **Aspiring Data Analyst** | B.Tech CSE (AI & ML)
