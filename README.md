@@ -8,7 +8,7 @@
 
 # Hi, I'm R.S.V.K. Jyothi 👋
 
-**Aspiring Data Analyst** | B.Tech CSE (AI & ML)
+**Aspiring AI Data Analyst** | B.Tech CSE (AI & ML)
 
 I work with SQL, Python and Power BI, and I like projects that start with raw, messy data and end with a clear answer and an honest account of its limits.
 
